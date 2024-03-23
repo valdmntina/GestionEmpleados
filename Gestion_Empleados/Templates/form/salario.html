@@ -1,0 +1,19 @@
+<form action="{% url 'save_salario' %}" method="get">
+
+    <input type="text" name="monto" placeholder="Ingrese valor">
+    
+    <br>
+    <label for="cobro_ano">
+        Pago diciembre
+        <input type="checkbox" name="cobro_ano">
+    </label>
+
+    <br>
+    <label for="pago_extra">
+        Pago junio
+        <input type="checkbox" name="pago_extra">
+    </label>
+
+    <br>
+    <button type="submit">Guardar</button>
+</form>

@@ -1,0 +1,28 @@
+<form action="{% url "save_trabajo" %}" method="get">
+    <div>
+        <div>
+            <label for="name">Nombre puesto de trabajo</label>
+        </div>
+        <input type="text" name="name">
+    </div>
+
+    <div>
+        <div>
+            <label for="descripcion">Descripcion del puesto de trabajo</label>
+        </div>
+        <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+    </div>
+    <br>
+    <div>
+        <div>
+            <label for="salarito_id">Salario</label>
+        </div>
+        <select id="salarito_id" name="salarito_id">
+
+            {% for sal in salaritos %}
+            <option value="{{sal.id}}">{{sal.monto}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit">Guardar</button>
+</form>

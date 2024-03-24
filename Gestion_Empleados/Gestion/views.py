@@ -11,7 +11,7 @@ def salario(request):
     return render(request, 'salary.html', {})
 
 def save_salario(request):
-    monto = request.GET['monto']
+    monto = request.POST['monto']
     if 'cobro_ano' in request.GET:
         cobro_ano = True
     else:
@@ -39,3 +39,14 @@ def save_trabajo(request):
     salario = Salarios.objects.get(id=salarito_id)
     new_trabajo = PuestoTrabajo.objects.create(nombre_cargo=nombre_cargo, descripcion=descripcion, salario_monto=salario)
     return HttpResponse('Se registro esta monda 2.0')
+
+def lista_salario(request):
+    lista_salario = Salarios.objects.all()
+    contexto = {'salarios': lista_salario}
+    return render(request, 'lista_salario.html', contexto)
+
+def id_salario(request, id):
+    salario = Salarios.objects.get(id = id)
+    salario.monto = salario
+    salario.save()
+    return render(request, 'salarios.html', {'salario':salario})

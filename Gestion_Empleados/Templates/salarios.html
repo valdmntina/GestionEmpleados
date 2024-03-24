@@ -1,0 +1,7 @@
+<form action="{% url 'save_salario' %}" method="post">
+{% csrf_token %}
+    <input type="text" name="monto" value = "{{salario.monto}}" placeholder="Ingrese valor">
+    
+    <br>
+    <button type="submit">Actualizar</button>
+</form>

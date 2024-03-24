@@ -1,0 +1,11 @@
+<table>
+{% for salario in salarios %}
+<tr>
+    <td>{{salario.id}}</td>
+    <td>{{salario.monto}}</td>
+    <td> 
+        <a href="{% url "id_salario" salario.id %}">Holi</a>
+    </td>
+</tr>
+{% endfor %}l
+</table>
